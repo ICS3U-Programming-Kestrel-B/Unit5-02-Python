@@ -11,6 +11,36 @@ import random
 import math
 
 
+# area function
+def calculate_area(height_cm, base_cm):
+    try:
+        # checking that height_cm is a float
+        height_cm_float = float(height_cm)
+        print("Test1")
+        try:
+            # checking that base_cm is a float
+            base_cm_float = float(base_cm)
+
+            # doing math stuff
+            tri_sum = 0.5 * (height_cm_float * base_cm_float);
+            print("2 / (")
+            print(height_cm_float);
+            print(" * ");
+            print(base_cm_float);
+            print(" = ");
+            print(tri_sum);
+            print(")")
+        except ValueError:
+            print("\n")
+            print("Please enter a valid base.")
+        finally:
+            print("Thanks for converting!2")
+    except ValueError:
+        print("\n")
+        print(("Please enter a valid height."))
+    finally:
+        print("Thanks for converting!1")
+
 def main():
     # introductory paragraph
     print("This program asks how many numbers")
@@ -23,18 +53,10 @@ def main():
     # getting height_string
     height_cm = input("Enter the height in cm: ")
     # getting base_string
-    base_cm = input("Enter the base in cm:")
+    base_cm = input("Enter the base in cm: ")
 
-    # area function
-    def calculate_area(height_cm, base_cm):
-        # checking that height_cm is a float
-        try:
-            height_cm_float = float(height_cm)
-        except ValueError:
-            print("\n")
-            print(("Please enter a valid height."))
-        finally:
-            print("Thanks for converting!")
+    # calling function
+    calculate_area(height_cm, base_cm)
 
 
 if __name__ == "__main__":
