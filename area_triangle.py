@@ -7,7 +7,6 @@
 # numbers of integers from the user,
 # and displays the sum
 
-import random
 import math
 
 
@@ -16,30 +15,44 @@ def calculate_area(height_cm, base_cm):
     try:
         # checking that height_cm is a float
         height_cm_float = float(height_cm)
-        print("Test1")
-        try:
-            # checking that base_cm is a float
-            base_cm_float = float(base_cm)
 
-            # doing math stuff
-            tri_sum = 0.5 * (height_cm_float * base_cm_float);
-            print("2 / (")
-            print(height_cm_float);
-            print(" * ");
-            print(base_cm_float);
-            print(" = ");
-            print(tri_sum);
-            print(")")
-        except ValueError:
+        # checking that it's bigger than zero
+        if height_cm_float > 0:
+            try:
+                # checking that base_cm is a float
+                base_cm_float = float(base_cm)
+
+                # checking that it's bigger than zero
+                if base_cm_float > 0:
+                    # initializing tri_sum
+                    tri_sum = 0.5 * (height_cm_float * base_cm_float)
+                    # printing results
+                    print("Your area is ", end="")
+                    print(tri_sum, end="")
+                    print("cm2.")
+                else:
+                    # negative message
+                    print("\n")
+                    print("Please enter a positive base.")
+            except ValueError:
+                # string message
+                print("\n")
+                print("Please enter a valid base.")
+            finally:
+                print("\n")
+        else:
+            # negative message
             print("\n")
-            print("Please enter a valid base.")
-        finally:
-            print("Thanks for converting!2")
+            print("Please enter a positive height.")
     except ValueError:
+        # string message
         print("\n")
         print(("Please enter a valid height."))
     finally:
-        print("Thanks for converting!1")
+        # ending remark
+        print("\n")
+        print("Thanks for converting!")
+
 
 def main():
     # introductory paragraph
